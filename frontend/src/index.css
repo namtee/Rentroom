@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-sidebar-from: #1e3a8a;
+    --color-sidebar-to: #0f172a;
+    --color-sidebar-active: #2563eb;
+    --color-sidebar-card: #1e40af;
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-primary-soft: #eff6ff;
+    --color-bg: #F8FAFC;
+    --color-surface: #FFFFFF;
+    --color-border: #E2E8F0;
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748B;
+    --color-warning: #F59E0B;
+    --color-danger: #EF4444;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: 'Prompt', sans-serif;
+  }
+}
+
+/* Tabular nums for clean financial & table numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom SweetAlert2 styling to blend seamlessly into TeeHidZ Design System */
+.swal2-popup.teehidz-swal-popup {
+  font-family: 'Prompt', sans-serif !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.swal2-title.teehidz-swal-title {
+  font-family: 'Prompt', sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+}
+
+.swal2-html-container.teehidz-swal-html {
+  font-family: 'Prompt', sans-serif !important;
+  font-size: 14px !important;
+  color: var(--color-text-secondary) !important;
+}
+
+.swal2-confirm.teehidz-swal-confirm-btn {
+  background-color: var(--color-primary) !important;
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  font-family: 'Prompt', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+.swal2-confirm.teehidz-swal-confirm-btn:hover {
+  background-color: var(--color-primary-hover) !important;
+}
+
+.swal2-cancel.teehidz-swal-cancel-btn {
+  background-color: #F1F5F9 !important;
+  color: var(--color-text-secondary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  padding: 10px 20px !important;
+  font-family: 'Prompt', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  box-shadow: none !important;
+}
+.swal2-cancel.teehidz-swal-cancel-btn:hover {
+  background-color: #E2E8F0 !important;
+}

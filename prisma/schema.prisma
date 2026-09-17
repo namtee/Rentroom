@@ -1,0 +1,201 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PropertyType {
+  CONDO
+  ROOM_RENTAL
+  APARTMENT
+  DORMITORY
+  COMMERCIAL
+  OTHER
+}
+
+enum RoomStatus {
+  OCCUPIED
+  VACANT
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  UNSPECIFIED
+}
+
+enum LeaseStatus {
+  ACTIVE
+  ENDED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PAID
+  PENDING
+  OVERDUE
+}
+
+enum MaintenanceStatus {
+  PENDING
+  IN_PROGRESS
+  DONE
+  CANCELLED
+}
+
+enum NotificationType {
+  MAINTENANCE_NEW
+  PAYMENT_RECEIVED
+  LEASE_EXPIRING
+  ROOM_AVAILABLE
+}
+
+enum Plan {
+  FREE
+  PREMIUM
+}
+
+enum UserRole {
+  OWNER
+  MANAGER
+  STAFF
+}
+
+model User {
+  id          String           @id @default(cuid())
+  email       String           @unique
+  displayName String
+  avatarUrl   String?
+  role        UserRole         @default(OWNER)
+  properties  PropertyMember[]
+}
+
+model Property {
+  id            String           @id @default(cuid())
+  name          String
+  type          PropertyType     @default(CONDO)
+  typeLabel     String?
+  plan          Plan             @default(FREE)
+  rooms         Room[]
+  tenants       Tenant[]
+  members       PropertyMember[]
+  expenses      Expense[]
+  notifications Notification[]
+}
+
+model PropertyMember {
+  userId     String
+  propertyId String
+  role       UserRole
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@id([userId, propertyId])
+  @@index([propertyId])
+}
+
+model Room {
+  id            String               @id @default(cuid())
+  propertyId    String
+  number        String
+  floor         Int
+  monthlyRent   Int
+  status        RoomStatus           @default(VACANT)
+  coverImageUrl String?
+  updatedAt     DateTime             @updatedAt
+  property      Property             @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  leases        Lease[]
+  maintenance   MaintenanceRequest[]
+
+  @@unique([propertyId, number])
+  @@index([propertyId, status])
+}
+
+model Tenant {
+  id         String   @id @default(cuid())
+  propertyId String
+  title      String
+  firstName  String
+  lastName   String
+  gender     Gender   @default(UNSPECIFIED)
+  phone      String?
+  avatarUrl  String?
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  leases     Lease[]
+
+  @@index([propertyId])
+}
+
+model Lease {
+  id        String      @id @default(cuid())
+  roomId    String
+  tenantId  String
+  startDate DateTime
+  endDate   DateTime
+  rent      Int
+  deposit   Int
+  status    LeaseStatus @default(ACTIVE)
+  room      Room        @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  tenant    Tenant      @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  payments  Payment[]
+
+  @@index([roomId, status])
+  @@index([tenantId, status])
+  @@index([status, endDate])
+}
+
+model Payment {
+  id      String        @id @default(cuid())
+  leaseId String
+  amount  Int
+  period  String
+  status  PaymentStatus @default(PENDING)
+  paidAt  DateTime?
+  lease   Lease         @relation(fields: [leaseId], references: [id], onDelete: Cascade)
+
+  @@index([leaseId, status])
+  @@index([status, paidAt])
+}
+
+model Expense {
+  id         String   @id @default(cuid())
+  propertyId String
+  category   String
+  amount     Int
+  spentAt    DateTime
+  note       String?
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId, spentAt])
+}
+
+model MaintenanceRequest {
+  id        String            @id @default(cuid())
+  roomId    String
+  title     String
+  status    MaintenanceStatus @default(PENDING)
+  createdAt DateTime          @default(now())
+  room      Room              @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId, status])
+  @@index([createdAt])
+}
+
+model Notification {
+  id         String           @id @default(cuid())
+  propertyId String
+  type       NotificationType
+  title      String
+  body       String
+  href       String?
+  readAt     DateTime?
+  createdAt  DateTime         @default(now())
+  property   Property         @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId, createdAt])
+  @@index([propertyId, readAt])
+  @@index([propertyId, type, href])
+}

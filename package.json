@@ -1,0 +1,41 @@
+{
+  "name": "teehidz-backend",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev": "node --env-file=.env ./node_modules/tsx/dist/cli.mjs watch server/index.ts",
+    "start": "node dist/server/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint server prisma tests eslint.config.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "node --env-file=.env ./node_modules/tsx/dist/cli.mjs prisma/seed.ts",
+    "job:lease-expiry": "node --env-file=.env ./node_modules/tsx/dist/cli.mjs server/jobs/leaseExpiry.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "6.16.2",
+    "cors": "2.8.5",
+    "express": "5.1.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.35.0",
+    "@types/cors": "2.8.19",
+    "@types/express": "5.0.3",
+    "@types/node": "24.3.1",
+    "eslint": "9.35.0",
+    "prisma": "6.16.2",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.42.0",
+    "vitest": "3.2.4"
+  },
+  "prisma": {
+    "seed": "node --env-file=.env ./node_modules/tsx/dist/cli.mjs prisma/seed.ts"
+  }
+}
