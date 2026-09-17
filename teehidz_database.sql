@@ -335,9 +335,9 @@ ALTER TABLE namtee888._prisma_migrations OWNER TO namtee888;
 --
 
 COPY namtee888."Expense" (id, "propertyId", category, amount, "spentAt", note) FROM stdin;
-cmu53xewm0058v9a0qw6k0cof	property_suksan	ค่าใช้จ่ายรวม	4760000	2026-07-20 05:00:00	\N
-cmu53xewm0059v9a040pg7a31	property_suksan	ค่าใช้จ่ายรวม	4980000	2026-08-20 05:00:00	\N
-cmu53xewm005av9a0o1drayyk	property_suksan	ค่าใช้จ่ายรวม	5230000	2026-09-10 05:00:00	\N
+cmu5bc6j00058v9hknax3uirc	property_suksan	ค่าใช้จ่ายรวม	4760000	2026-07-20 05:00:00	\N
+cmu5bc6j00059v9hkfzpo0q3o	property_suksan	ค่าใช้จ่ายรวม	4980000	2026-08-20 05:00:00	\N
+cmu5bc6j0005av9hkaoaa59kv	property_suksan	ค่าใช้จ่ายรวม	5230000	2026-09-10 05:00:00	\N
 \.
 
 
@@ -407,10 +407,10 @@ maintenance_304	room_304	หลอดไฟชำรุด	IN_PROGRESS	2025-09-1
 --
 
 COPY namtee888."Notification" (id, "propertyId", type, title, body, href, "readAt", "createdAt") FROM stdin;
-cmu53xewo005bv9a056akrl9l	property_suksan	MAINTENANCE_NEW	มีแจ้งซ่อมใหม่	ห้อง 203 - น้ำรั่วในห้องน้ำ	/maintenance/maintenance_203	\N	2025-09-11 12:12:00
-cmu53xewo005cv9a0d191rj8v	property_suksan	PAYMENT_RECEIVED	ผู้เช่าชำระค่าเช่า	ห้อง 101 - 3,500 บาท	/finance/payments/seed-101	\N	2025-09-11 13:05:00
-cmu53xewo005dv9a0xo58jwcj	property_suksan	LEASE_EXPIRING	ใกล้หมดสัญญาเช่า	ห้อง 110 - เหลือ 15 วัน	/leases/lease_110	\N	2025-09-11 08:12:00
-cmu53xewo005ev9a0d3u93hf5	property_suksan	ROOM_AVAILABLE	ห้องว่างพร้อมให้เช่า	ห้อง 103 - 3,800 บาท/เดือน	/rooms/room_103?seed=1	2026-09-17 05:46:48.709	2025-09-11 06:12:00
+cmu5bc6j2005bv9hkih5t38lh	property_suksan	MAINTENANCE_NEW	มีแจ้งซ่อมใหม่	ห้อง 203 - น้ำรั่วในห้องน้ำ	/maintenance/maintenance_203	\N	2025-09-11 12:12:00
+cmu5bc6j2005cv9hkxwwjcvvi	property_suksan	PAYMENT_RECEIVED	ผู้เช่าชำระค่าเช่า	ห้อง 101 - 3,500 บาท	/finance/payments/seed-101	\N	2025-09-11 13:05:00
+cmu5bc6j2005dv9hkbxhhi28k	property_suksan	LEASE_EXPIRING	ใกล้หมดสัญญาเช่า	ห้อง 110 - เหลือ 15 วัน	/leases/lease_110	\N	2025-09-11 08:12:00
+cmu5bc6j2005ev9hkysrrydao	property_suksan	ROOM_AVAILABLE	ห้องว่างพร้อมให้เช่า	ห้อง 103 - 3,800 บาท/เดือน	/rooms/room_103?seed=1	2026-09-17 09:14:15.024	2025-09-11 06:12:00
 \.
 
 
@@ -419,100 +419,100 @@ cmu53xewo005ev9a0d3u93hf5	property_suksan	ROOM_AVAILABLE	ห้องว่า�
 --
 
 COPY namtee888."Payment" (id, "leaseId", amount, period, status, "paidAt") FROM stdin;
-cmu53xeux0001v9a0plor5xuf	lease_101	350000	2026-09	PAID	2026-09-11 13:05:00
-cmu53xev40003v9a0vwk9alyf	lease_102	350000	2026-09	PAID	2026-09-11 12:42:00
-cmu53xev50005v9a0ih4kmxc6	lease_104	380000	2026-09	PAID	2026-09-11 11:30:00
-cmu53xev70007v9a0vz6d2kvl	lease_105	380000	2026-09	PAID	2026-09-11 10:20:00
-cmu53xeva0009v9a0lkntnys3	lease_108	350000	2026-09	PAID	2026-09-10 09:12:00
-cmu53xevc000bv9a0cpbdawpq	lease_107	350000	2026-09	PAID	2026-09-01 08:00:00
-cmu53xevd000dv9a0zt8fqg6q	lease_108	350000	2026-09	PAID	2026-09-02 08:00:00
-cmu53xeve000fv9a0hsemicq6	lease_109	350000	2026-09	PAID	2026-09-03 08:00:00
-cmu53xevf000hv9a0h1wh5dty	lease_110	350000	2026-09	PAID	2026-09-04 08:00:00
-cmu53xevg000jv9a0jkhx0mx6	lease_111	350000	2026-09	PAID	2026-09-05 08:00:00
-cmu53xevh000lv9a0bkowqlvs	lease_201	350000	2026-09	PAID	2026-09-06 08:00:00
-cmu53xevi000nv9a0v3gjdt8l	lease_202	380000	2026-09	PAID	2026-09-07 08:00:00
-cmu53xevj000pv9a05l7ectl4	lease_203	380000	2026-09	PAID	2026-09-08 08:00:00
-cmu53xevj000rv9a0908dp1gf	lease_204	380000	2026-09	PAID	2026-09-09 08:00:00
-cmu53xevk000tv9a0su4dnk32	lease_205	380000	2026-09	PAID	2026-09-01 08:00:00
-cmu53xevk000vv9a03ye6e1iu	lease_206	380000	2026-09	PAID	2026-09-02 08:00:00
-cmu53xevl000xv9a05wqanehf	lease_208	380000	2026-09	PAID	2026-09-03 08:00:00
-cmu53xevm000zv9a07kyojejh	lease_209	380000	2026-09	PAID	2026-09-04 08:00:00
-cmu53xevm0011v9a084t86zy6	lease_210	380000	2026-09	PAID	2026-09-05 08:00:00
-cmu53xevn0013v9a0tpntv15m	lease_211	380000	2026-09	PAID	2026-09-06 08:00:00
-cmu53xevn0015v9a0fm9p523n	lease_212	380000	2026-09	PAID	2026-09-07 08:00:00
-cmu53xevn0017v9a0yqor50pu	lease_301	380000	2026-09	PAID	2026-09-08 08:00:00
-cmu53xevo0019v9a0ovg2mc0l	lease_302	380000	2026-09	PAID	2026-09-09 08:00:00
-cmu53xevo001bv9a0dr6zqa9m	lease_303	380000	2026-09	PAID	2026-09-01 08:00:00
-cmu53xevp001dv9a0tr8s3o12	lease_304	380000	2026-09	PAID	2026-09-02 08:00:00
-cmu53xevp001fv9a0b36o91dv	lease_305	380000	2026-09	PAID	2026-09-03 08:00:00
-cmu53xevq001hv9a0qw8bwk0l	lease_306	380000	2026-09	PAID	2026-09-04 08:00:00
-cmu53xevq001jv9a0strytrx0	lease_307	380000	2026-09	PAID	2026-09-05 08:00:00
-cmu53xevr001lv9a0vaomsqz0	lease_308	380000	2026-09	PAID	2026-09-06 08:00:00
-cmu53xevr001nv9a08ye6wmfy	lease_310	380000	2026-09	PAID	2026-09-07 08:00:00
-cmu53xevs001pv9a0indyk4su	lease_311	380000	2026-09	PAID	2026-09-08 08:00:00
-cmu53xevs001rv9a066587hj2	lease_312	380000	2026-09	PAID	2026-09-09 08:00:00
-cmu53xevt001tv9a01my4rkt8	lease_401	380000	2026-09	PAID	2026-09-01 08:00:00
-cmu53xevt001vv9a0u9iukfyj	lease_402	380000	2026-09	PAID	2026-09-02 08:00:00
-cmu53xevu001xv9a0n0ya0rj9	lease_101	350000	2026-07	PAID	2026-07-05 08:00:00
-cmu53xevu001zv9a0ebz4l1ss	lease_102	350000	2026-07	PAID	2026-07-06 08:00:00
-cmu53xevu0021v9a0qzse9v1e	lease_104	350000	2026-07	PAID	2026-07-07 08:00:00
-cmu53xevv0023v9a0sai12zte	lease_105	350000	2026-07	PAID	2026-07-08 08:00:00
-cmu53xevv0025v9a0dsstiuyj	lease_106	380000	2026-07	PAID	2026-07-09 08:00:00
-cmu53xevw0027v9a02oi8l8vv	lease_107	380000	2026-07	PAID	2026-07-10 08:00:00
-cmu53xevw0029v9a0va0td64x	lease_108	380000	2026-07	PAID	2026-07-11 08:00:00
-cmu53xevx002bv9a0spj4iwq8	lease_109	380000	2026-07	PAID	2026-07-12 08:00:00
-cmu53xevx002dv9a032e32kkv	lease_110	380000	2026-07	PAID	2026-07-13 08:00:00
-cmu53xevy002fv9a05iiabthb	lease_111	380000	2026-07	PAID	2026-07-14 08:00:00
-cmu53xevy002hv9a0tduxap0g	lease_201	380000	2026-07	PAID	2026-07-15 08:00:00
-cmu53xevz002jv9a06v4sh4dd	lease_202	380000	2026-07	PAID	2026-07-16 08:00:00
-cmu53xevz002lv9a0w0v792e3	lease_203	380000	2026-07	PAID	2026-07-17 08:00:00
-cmu53xew0002nv9a0r1z7jvub	lease_204	380000	2026-07	PAID	2026-07-18 08:00:00
-cmu53xew0002pv9a0ganm1be4	lease_205	380000	2026-07	PAID	2026-07-19 08:00:00
-cmu53xew1002rv9a0gyciup8b	lease_206	380000	2026-07	PAID	2026-07-20 08:00:00
-cmu53xew1002tv9a03r8q5ng4	lease_208	380000	2026-07	PAID	2026-07-21 08:00:00
-cmu53xew1002vv9a0lrxib8rx	lease_209	380000	2026-07	PAID	2026-07-22 08:00:00
-cmu53xew2002xv9a0ylu5wbf5	lease_210	380000	2026-07	PAID	2026-07-23 08:00:00
-cmu53xew2002zv9a0cfmlxyld	lease_211	380000	2026-07	PAID	2026-07-24 08:00:00
-cmu53xew30031v9a0dk0gjwkr	lease_212	380000	2026-07	PAID	2026-07-05 08:00:00
-cmu53xew30033v9a0t63c894j	lease_301	380000	2026-07	PAID	2026-07-06 08:00:00
-cmu53xew40035v9a0l2nqsv7d	lease_302	380000	2026-07	PAID	2026-07-07 08:00:00
-cmu53xew40037v9a00s6kvfus	lease_303	380000	2026-07	PAID	2026-07-08 08:00:00
-cmu53xew50039v9a08w7qiv4e	lease_304	380000	2026-07	PAID	2026-07-09 08:00:00
-cmu53xew5003bv9a09w9wy5t3	lease_305	380000	2026-07	PAID	2026-07-10 08:00:00
-cmu53xew5003dv9a03u28rg8g	lease_306	380000	2026-07	PAID	2026-07-11 08:00:00
-cmu53xew6003fv9a0z3vztars	lease_307	380000	2026-07	PAID	2026-07-12 08:00:00
-cmu53xew6003hv9a0ake8mwsz	lease_101	350000	2026-08	PAID	2026-08-05 08:00:00
-cmu53xew7003jv9a0x2shdre5	lease_102	350000	2026-08	PAID	2026-08-06 08:00:00
-cmu53xew7003lv9a09jlw9i0t	lease_104	350000	2026-08	PAID	2026-08-07 08:00:00
-cmu53xew8003nv9a066w9x3qp	lease_105	350000	2026-08	PAID	2026-08-08 08:00:00
-cmu53xew8003pv9a0kj4xtca7	lease_106	350000	2026-08	PAID	2026-08-09 08:00:00
-cmu53xew9003rv9a0ra4noyfs	lease_107	350000	2026-08	PAID	2026-08-10 08:00:00
-cmu53xew9003tv9a0wyjzax6o	lease_108	350000	2026-08	PAID	2026-08-11 08:00:00
-cmu53xewa003vv9a00r22odxp	lease_109	350000	2026-08	PAID	2026-08-12 08:00:00
-cmu53xewa003xv9a062svmn2c	lease_110	350000	2026-08	PAID	2026-08-13 08:00:00
-cmu53xewb003zv9a0s85apgbf	lease_111	350000	2026-08	PAID	2026-08-14 08:00:00
-cmu53xewb0041v9a0rgje64ai	lease_201	350000	2026-08	PAID	2026-08-15 08:00:00
-cmu53xewb0043v9a0j5428oto	lease_202	350000	2026-08	PAID	2026-08-16 08:00:00
-cmu53xewc0045v9a0n87u67bv	lease_203	350000	2026-08	PAID	2026-08-17 08:00:00
-cmu53xewd0047v9a08ewkxfwc	lease_204	350000	2026-08	PAID	2026-08-18 08:00:00
-cmu53xewd0049v9a0rzzypl62	lease_205	350000	2026-08	PAID	2026-08-19 08:00:00
-cmu53xewe004bv9a0e4d6faii	lease_206	350000	2026-08	PAID	2026-08-20 08:00:00
-cmu53xewe004dv9a0tjmcipjs	lease_208	350000	2026-08	PAID	2026-08-21 08:00:00
-cmu53xewe004fv9a0gq0nu3w4	lease_209	350000	2026-08	PAID	2026-08-22 08:00:00
-cmu53xewf004hv9a0b1ur1umv	lease_210	350000	2026-08	PAID	2026-08-23 08:00:00
-cmu53xewf004jv9a0msyr7pva	lease_211	350000	2026-08	PAID	2026-08-24 08:00:00
-cmu53xewg004lv9a07nhpju5x	lease_212	350000	2026-08	PAID	2026-08-05 08:00:00
-cmu53xewg004nv9a0bjjjjxrl	lease_301	350000	2026-08	PAID	2026-08-06 08:00:00
-cmu53xewh004pv9a0fmk971if	lease_302	350000	2026-08	PAID	2026-08-07 08:00:00
-cmu53xewh004rv9a0wd4of666	lease_303	350000	2026-08	PAID	2026-08-08 08:00:00
-cmu53xewi004tv9a0ct3n0fl4	lease_304	350000	2026-08	PAID	2026-08-09 08:00:00
-cmu53xewi004vv9a09rekeoai	lease_305	350000	2026-08	PAID	2026-08-10 08:00:00
-cmu53xewj004xv9a0ller8ms1	lease_306	350000	2026-08	PAID	2026-08-11 08:00:00
-cmu53xewj004zv9a0kgjf0hk0	lease_307	350000	2026-08	PAID	2026-08-12 08:00:00
-cmu53xewk0051v9a0p1xcuz3o	lease_308	350000	2026-08	PAID	2026-08-13 08:00:00
-cmu53xewk0053v9a0euz73xo8	lease_310	380000	2026-08	PAID	2026-08-14 08:00:00
-cmu53xewl0055v9a0u35nbb3z	lease_311	380000	2026-08	PAID	2026-08-15 08:00:00
-cmu53xewl0057v9a0pfujk7hv	lease_312	380000	2026-08	PAID	2026-08-16 08:00:00
+cmu5bc6hq0001v9hkega2111c	lease_101	350000	2026-09	PAID	2026-09-11 13:05:00
+cmu5bc6hr0003v9hkph7wwwle	lease_102	350000	2026-09	PAID	2026-09-11 12:42:00
+cmu5bc6hs0005v9hkbyh6uyda	lease_104	380000	2026-09	PAID	2026-09-11 11:30:00
+cmu5bc6hs0007v9hkkad3hmzd	lease_105	380000	2026-09	PAID	2026-09-11 10:20:00
+cmu5bc6ht0009v9hkdztdy1v6	lease_108	350000	2026-09	PAID	2026-09-10 09:12:00
+cmu5bc6ht000bv9hkxsig9wr4	lease_107	350000	2026-09	PAID	2026-09-01 08:00:00
+cmu5bc6hu000dv9hk2092w1ao	lease_108	350000	2026-09	PAID	2026-09-02 08:00:00
+cmu5bc6hu000fv9hkxqbgeqy1	lease_109	350000	2026-09	PAID	2026-09-03 08:00:00
+cmu5bc6hv000hv9hk53fuhzls	lease_110	350000	2026-09	PAID	2026-09-04 08:00:00
+cmu5bc6hv000jv9hk4esm07ac	lease_111	350000	2026-09	PAID	2026-09-05 08:00:00
+cmu5bc6hw000lv9hkwxyroqgd	lease_201	350000	2026-09	PAID	2026-09-06 08:00:00
+cmu5bc6hw000nv9hktapc367g	lease_202	380000	2026-09	PAID	2026-09-07 08:00:00
+cmu5bc6hx000pv9hkpufecc7q	lease_203	380000	2026-09	PAID	2026-09-08 08:00:00
+cmu5bc6hx000rv9hkvowle98m	lease_204	380000	2026-09	PAID	2026-09-09 08:00:00
+cmu5bc6hx000tv9hkx4prdpju	lease_205	380000	2026-09	PAID	2026-09-01 08:00:00
+cmu5bc6hy000vv9hkwwp7adp3	lease_206	380000	2026-09	PAID	2026-09-02 08:00:00
+cmu5bc6hz000xv9hkf1jjghl7	lease_208	380000	2026-09	PAID	2026-09-03 08:00:00
+cmu5bc6hz000zv9hkt0l19auw	lease_209	380000	2026-09	PAID	2026-09-04 08:00:00
+cmu5bc6i00011v9hkek1bz0rn	lease_210	380000	2026-09	PAID	2026-09-05 08:00:00
+cmu5bc6i00013v9hkgmbhsr7p	lease_211	380000	2026-09	PAID	2026-09-06 08:00:00
+cmu5bc6i00015v9hkoex5wvtf	lease_212	380000	2026-09	PAID	2026-09-07 08:00:00
+cmu5bc6i10017v9hk3pc8mcc6	lease_301	380000	2026-09	PAID	2026-09-08 08:00:00
+cmu5bc6i10019v9hk0vlbd7b0	lease_302	380000	2026-09	PAID	2026-09-09 08:00:00
+cmu5bc6i2001bv9hkdfz5sgca	lease_303	380000	2026-09	PAID	2026-09-01 08:00:00
+cmu5bc6i2001dv9hk41soqgyu	lease_304	380000	2026-09	PAID	2026-09-02 08:00:00
+cmu5bc6i3001fv9hkdyz398fr	lease_305	380000	2026-09	PAID	2026-09-03 08:00:00
+cmu5bc6i3001hv9hk08j54y9f	lease_306	380000	2026-09	PAID	2026-09-04 08:00:00
+cmu5bc6i4001jv9hkwmkf1iqt	lease_307	380000	2026-09	PAID	2026-09-05 08:00:00
+cmu5bc6i4001lv9hk5easrwmc	lease_308	380000	2026-09	PAID	2026-09-06 08:00:00
+cmu5bc6i4001nv9hkh47xewq7	lease_310	380000	2026-09	PAID	2026-09-07 08:00:00
+cmu5bc6i5001pv9hk2tf46rsq	lease_311	380000	2026-09	PAID	2026-09-08 08:00:00
+cmu5bc6i5001rv9hkvd5j68hn	lease_312	380000	2026-09	PAID	2026-09-09 08:00:00
+cmu5bc6i6001tv9hko7lfr9ce	lease_401	380000	2026-09	PAID	2026-09-01 08:00:00
+cmu5bc6i6001vv9hkka87hzru	lease_402	380000	2026-09	PAID	2026-09-02 08:00:00
+cmu5bc6i7001xv9hkpwc4dbkq	lease_101	350000	2026-07	PAID	2026-07-05 08:00:00
+cmu5bc6i7001zv9hkmu3lpcw1	lease_102	350000	2026-07	PAID	2026-07-06 08:00:00
+cmu5bc6i70021v9hkhoea0ht5	lease_104	350000	2026-07	PAID	2026-07-07 08:00:00
+cmu5bc6i80023v9hkly94i346	lease_105	350000	2026-07	PAID	2026-07-08 08:00:00
+cmu5bc6i80025v9hkgq8b3lsu	lease_106	380000	2026-07	PAID	2026-07-09 08:00:00
+cmu5bc6i90027v9hkyvffmkd7	lease_107	380000	2026-07	PAID	2026-07-10 08:00:00
+cmu5bc6i90029v9hk07x0j2dq	lease_108	380000	2026-07	PAID	2026-07-11 08:00:00
+cmu5bc6ia002bv9hkxg59f139	lease_109	380000	2026-07	PAID	2026-07-12 08:00:00
+cmu5bc6ia002dv9hkqvxoco8x	lease_110	380000	2026-07	PAID	2026-07-13 08:00:00
+cmu5bc6ib002fv9hkamq3hvqp	lease_111	380000	2026-07	PAID	2026-07-14 08:00:00
+cmu5bc6ib002hv9hksig938au	lease_201	380000	2026-07	PAID	2026-07-15 08:00:00
+cmu5bc6ic002jv9hkfarvnqcm	lease_202	380000	2026-07	PAID	2026-07-16 08:00:00
+cmu5bc6ic002lv9hkh8nkqlom	lease_203	380000	2026-07	PAID	2026-07-17 08:00:00
+cmu5bc6id002nv9hkjogqhjwv	lease_204	380000	2026-07	PAID	2026-07-18 08:00:00
+cmu5bc6id002pv9hkhwry3ub1	lease_205	380000	2026-07	PAID	2026-07-19 08:00:00
+cmu5bc6ie002rv9hks0tjtiys	lease_206	380000	2026-07	PAID	2026-07-20 08:00:00
+cmu5bc6ie002tv9hk6uavm1fp	lease_208	380000	2026-07	PAID	2026-07-21 08:00:00
+cmu5bc6if002vv9hksh5sjez3	lease_209	380000	2026-07	PAID	2026-07-22 08:00:00
+cmu5bc6if002xv9hkndyzj0dv	lease_210	380000	2026-07	PAID	2026-07-23 08:00:00
+cmu5bc6ig002zv9hkvsivtjx3	lease_211	380000	2026-07	PAID	2026-07-24 08:00:00
+cmu5bc6ig0031v9hkevwnre73	lease_212	380000	2026-07	PAID	2026-07-05 08:00:00
+cmu5bc6ih0033v9hk0j430qyf	lease_301	380000	2026-07	PAID	2026-07-06 08:00:00
+cmu5bc6ih0035v9hk29xtntis	lease_302	380000	2026-07	PAID	2026-07-07 08:00:00
+cmu5bc6ih0037v9hk1qoqjh81	lease_303	380000	2026-07	PAID	2026-07-08 08:00:00
+cmu5bc6ii0039v9hkmhyjw8kc	lease_304	380000	2026-07	PAID	2026-07-09 08:00:00
+cmu5bc6ii003bv9hkpw9gkju8	lease_305	380000	2026-07	PAID	2026-07-10 08:00:00
+cmu5bc6ij003dv9hk4ch8ckn4	lease_306	380000	2026-07	PAID	2026-07-11 08:00:00
+cmu5bc6ij003fv9hk94fquvr8	lease_307	380000	2026-07	PAID	2026-07-12 08:00:00
+cmu5bc6ik003hv9hk42ljt82n	lease_101	350000	2026-08	PAID	2026-08-05 08:00:00
+cmu5bc6ik003jv9hkk00rf49v	lease_102	350000	2026-08	PAID	2026-08-06 08:00:00
+cmu5bc6il003lv9hkgtw0hozb	lease_104	350000	2026-08	PAID	2026-08-07 08:00:00
+cmu5bc6il003nv9hk5af8r9zm	lease_105	350000	2026-08	PAID	2026-08-08 08:00:00
+cmu5bc6il003pv9hk6397atfp	lease_106	350000	2026-08	PAID	2026-08-09 08:00:00
+cmu5bc6im003rv9hk6nksa42t	lease_107	350000	2026-08	PAID	2026-08-10 08:00:00
+cmu5bc6im003tv9hkux8ml3m7	lease_108	350000	2026-08	PAID	2026-08-11 08:00:00
+cmu5bc6in003vv9hk423fqg4z	lease_109	350000	2026-08	PAID	2026-08-12 08:00:00
+cmu5bc6in003xv9hk5626mz40	lease_110	350000	2026-08	PAID	2026-08-13 08:00:00
+cmu5bc6io003zv9hked4s1ylx	lease_111	350000	2026-08	PAID	2026-08-14 08:00:00
+cmu5bc6io0041v9hkgavys8p3	lease_201	350000	2026-08	PAID	2026-08-15 08:00:00
+cmu5bc6ip0043v9hkq2o2mpj6	lease_202	350000	2026-08	PAID	2026-08-16 08:00:00
+cmu5bc6ip0045v9hk11cm2gtp	lease_203	350000	2026-08	PAID	2026-08-17 08:00:00
+cmu5bc6ip0047v9hkgpn9dbas	lease_204	350000	2026-08	PAID	2026-08-18 08:00:00
+cmu5bc6iq0049v9hkw64890gi	lease_205	350000	2026-08	PAID	2026-08-19 08:00:00
+cmu5bc6iq004bv9hk1x4j70q6	lease_206	350000	2026-08	PAID	2026-08-20 08:00:00
+cmu5bc6ir004dv9hk8bmi2kyx	lease_208	350000	2026-08	PAID	2026-08-21 08:00:00
+cmu5bc6ir004fv9hkpyw7n4m3	lease_209	350000	2026-08	PAID	2026-08-22 08:00:00
+cmu5bc6is004hv9hk74l4nsv1	lease_210	350000	2026-08	PAID	2026-08-23 08:00:00
+cmu5bc6is004jv9hkdo989qqy	lease_211	350000	2026-08	PAID	2026-08-24 08:00:00
+cmu5bc6it004lv9hklhnpcmrj	lease_212	350000	2026-08	PAID	2026-08-05 08:00:00
+cmu5bc6iu004nv9hkdpia1wgc	lease_301	350000	2026-08	PAID	2026-08-06 08:00:00
+cmu5bc6iu004pv9hkhqu7480m	lease_302	350000	2026-08	PAID	2026-08-07 08:00:00
+cmu5bc6iv004rv9hkqi31rto2	lease_303	350000	2026-08	PAID	2026-08-08 08:00:00
+cmu5bc6iw004tv9hk9jgwff5r	lease_304	350000	2026-08	PAID	2026-08-09 08:00:00
+cmu5bc6iw004vv9hk5edu0fp8	lease_305	350000	2026-08	PAID	2026-08-10 08:00:00
+cmu5bc6ix004xv9hksnygwkqa	lease_306	350000	2026-08	PAID	2026-08-11 08:00:00
+cmu5bc6ix004zv9hkamy4xdej	lease_307	350000	2026-08	PAID	2026-08-12 08:00:00
+cmu5bc6iy0051v9hk5crdofpo	lease_308	350000	2026-08	PAID	2026-08-13 08:00:00
+cmu5bc6iy0053v9hk6a1asgtn	lease_310	380000	2026-08	PAID	2026-08-14 08:00:00
+cmu5bc6iz0055v9hkg12xnid2	lease_311	380000	2026-08	PAID	2026-08-15 08:00:00
+cmu5bc6iz0057v9hkexggljc3	lease_312	380000	2026-08	PAID	2026-08-16 08:00:00
 \.
 
 
@@ -539,54 +539,54 @@ user_owner	property_suksan	OWNER
 --
 
 COPY namtee888."Room" (id, "propertyId", number, floor, "monthlyRent", status, "coverImageUrl", "updatedAt") FROM stdin;
-room_309	property_suksan	309	3	380000	VACANT	\N	2026-09-17 05:46:48.775
-room_310	property_suksan	310	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_311	property_suksan	311	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_312	property_suksan	312	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_401	property_suksan	401	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_106	property_suksan	106	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_107	property_suksan	107	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_108	property_suksan	108	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_109	property_suksan	109	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_110	property_suksan	110	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_111	property_suksan	111	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_112	property_suksan	112	1	380000	VACANT	\N	2026-09-17 05:46:48.775
-room_201	property_suksan	201	2	350000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_202	property_suksan	202	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_203	property_suksan	203	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_204	property_suksan	204	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_205	property_suksan	205	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_206	property_suksan	206	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_207	property_suksan	207	2	380000	VACANT	\N	2026-09-17 05:46:48.775
-room_208	property_suksan	208	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_209	property_suksan	209	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_210	property_suksan	210	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_211	property_suksan	211	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_212	property_suksan	212	2	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_301	property_suksan	301	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_302	property_suksan	302	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_303	property_suksan	303	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_304	property_suksan	304	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_305	property_suksan	305	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_306	property_suksan	306	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_307	property_suksan	307	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_308	property_suksan	308	3	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_402	property_suksan	402	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_403	property_suksan	403	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_404	property_suksan	404	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_405	property_suksan	405	4	380000	VACANT	\N	2026-09-17 05:46:48.775
-room_406	property_suksan	406	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_407	property_suksan	407	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_408	property_suksan	408	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_409	property_suksan	409	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_410	property_suksan	410	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_411	property_suksan	411	4	380000	OCCUPIED	\N	2026-09-17 05:46:48.775
-room_412	property_suksan	412	4	380000	VACANT	\N	2026-09-17 05:46:48.775
-room_105	property_suksan	105	1	380000	OCCUPIED	\N	2026-09-17 05:46:48.889
-room_104	property_suksan	104	1	380000	OCCUPIED	\N	2026-09-17 05:46:48.89
-room_103	property_suksan	103	1	380000	VACANT	\N	2026-09-17 05:46:48.891
-room_102	property_suksan	102	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.891
-room_101	property_suksan	101	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.892
+room_106	property_suksan	106	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_107	property_suksan	107	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_108	property_suksan	108	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_109	property_suksan	109	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_110	property_suksan	110	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_111	property_suksan	111	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_112	property_suksan	112	1	380000	VACANT	\N	2026-09-17 09:14:15.088
+room_201	property_suksan	201	2	350000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_202	property_suksan	202	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_203	property_suksan	203	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_204	property_suksan	204	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_205	property_suksan	205	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_206	property_suksan	206	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_207	property_suksan	207	2	380000	VACANT	\N	2026-09-17 09:14:15.088
+room_208	property_suksan	208	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_209	property_suksan	209	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_210	property_suksan	210	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_211	property_suksan	211	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_212	property_suksan	212	2	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_301	property_suksan	301	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_302	property_suksan	302	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_303	property_suksan	303	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_304	property_suksan	304	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_305	property_suksan	305	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_306	property_suksan	306	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_307	property_suksan	307	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_308	property_suksan	308	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_309	property_suksan	309	3	380000	VACANT	\N	2026-09-17 09:14:15.088
+room_310	property_suksan	310	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_311	property_suksan	311	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_312	property_suksan	312	3	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_401	property_suksan	401	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_402	property_suksan	402	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_403	property_suksan	403	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_404	property_suksan	404	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_405	property_suksan	405	4	380000	VACANT	\N	2026-09-17 09:14:15.088
+room_406	property_suksan	406	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_407	property_suksan	407	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_408	property_suksan	408	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_409	property_suksan	409	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_410	property_suksan	410	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_411	property_suksan	411	4	380000	OCCUPIED	\N	2026-09-17 09:14:15.088
+room_412	property_suksan	412	4	380000	VACANT	\N	2026-09-17 09:14:15.088
+room_105	property_suksan	105	1	380000	OCCUPIED	\N	2026-09-17 09:14:15.183
+room_104	property_suksan	104	1	380000	OCCUPIED	\N	2026-09-17 09:14:15.184
+room_103	property_suksan	103	1	380000	VACANT	\N	2026-09-17 09:14:15.185
+room_102	property_suksan	102	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.185
+room_101	property_suksan	101	1	350000	OCCUPIED	\N	2026-09-17 09:14:15.186
 \.
 
 
@@ -595,48 +595,48 @@ room_101	property_suksan	101	1	350000	OCCUPIED	\N	2026-09-17 05:46:48.892
 --
 
 COPY namtee888."Tenant" (id, "propertyId", title, "firstName", "lastName", gender, phone, "avatarUrl") FROM stdin;
-tenant_01	property_suksan	น.ส.	วราภรณ์	ใจดี	FEMALE	\N	\N
-tenant_02	property_suksan	นาย	ศักดิ์ชัย	แสนสุข	MALE	\N	\N
-tenant_03	property_suksan	น.ส.	ธนพร	พรมมา	FEMALE	\N	\N
-tenant_04	property_suksan	นาย	กิตติพงษ์	รัตนวงศ์	MALE	\N	\N
-tenant_05	property_suksan	น.ส.	พิมพ์ชนก	บุญมี	FEMALE	\N	\N
-tenant_06	property_suksan	น.ส.	ชนากานต์	สุขใจ	FEMALE	\N	\N
-tenant_07	property_suksan	นาย	สุรเชษฐ์	จันทร์ดี	MALE	\N	\N
-tenant_08	property_suksan	นาย	ธนกฤต	วงศ์ดี	FEMALE	\N	\N
-tenant_09	property_suksan	น.ส.	ณัฐชา	มีสุข	FEMALE	\N	\N
-tenant_10	property_suksan	น.ส.	ปวีณา	แก้วใส	FEMALE	\N	\N
-tenant_11	property_suksan	นาย	พงศกร	ทองดี	FEMALE	\N	\N
-tenant_12	property_suksan	น.ส.	ศิริพร	คำแสน	FEMALE	\N	\N
-tenant_13	property_suksan	น.ส.	กัญญารัตน์	บุญช่วย	FEMALE	\N	\N
-tenant_14	property_suksan	นาย	ณัฐวุฒิ	เมืองงาม	FEMALE	\N	\N
-tenant_15	property_suksan	น.ส.	ภัทรวดี	ใจงาม	FEMALE	\N	\N
-tenant_16	property_suksan	นาย	อาทิตย์	ศรีสุข	FEMALE	\N	\N
-tenant_17	property_suksan	น.ส.	สุพัตรา	แสงทอง	FEMALE	\N	\N
-tenant_18	property_suksan	น.ส.	จิราภา	พูลผล	FEMALE	\N	\N
-tenant_19	property_suksan	นาย	ธีรภัทร	บุญส่ง	FEMALE	\N	\N
-tenant_20	property_suksan	น.ส.	ชลธิชา	สวัสดี	FEMALE	\N	\N
-tenant_21	property_suksan	นาย	ภูริณัฐ	ใจมั่น	FEMALE	\N	\N
-tenant_22	property_suksan	น.ส.	ณิชาภัทร	วัฒนา	FEMALE	\N	\N
-tenant_23	property_suksan	น.ส.	รัตนา	สงวนดี	FEMALE	\N	\N
-tenant_24	property_suksan	นาย	วรพล	มั่นคง	FEMALE	\N	\N
-tenant_25	property_suksan	น.ส.	อรทัย	พรหมดี	FEMALE	\N	\N
-tenant_26	property_suksan	นาย	ชัยวัฒน์	ศรีงาม	FEMALE	\N	\N
-tenant_27	property_suksan	น.ส.	นันทิชา	สุขสันต์	FEMALE	\N	\N
-tenant_28	property_suksan	น.ส.	เบญจพร	แก้วงาม	MALE	\N	\N
-tenant_29	property_suksan	นาย	ภาคภูมิ	ทรัพย์ดี	MALE	\N	\N
-tenant_30	property_suksan	น.ส.	สุชาดา	มีผล	MALE	\N	\N
-tenant_31	property_suksan	นาย	ธนพล	ศรีทอง	MALE	\N	\N
-tenant_32	property_suksan	น.ส.	อัญชลี	ใจบุญ	MALE	\N	\N
-tenant_33	property_suksan	น.ส.	กมลชนก	พูนสุข	MALE	\N	\N
-tenant_34	property_suksan	นาย	ปกรณ์	วงศ์ไทย	MALE	\N	\N
-tenant_35	property_suksan	น.ส.	มณีรัตน์	แสนดี	MALE	\N	\N
-tenant_36	property_suksan	นาย	เจษฎา	คงมั่น	MALE	\N	\N
-tenant_37	property_suksan	น.ส.	พรนภา	ชื่นใจ	MALE	\N	\N
-tenant_38	property_suksan	นาย	นราวิชญ์	วัฒนา	MALE	\N	\N
-tenant_39	property_suksan	น.ส.	พิชชาภา	บุญเรือง	MALE	\N	\N
-tenant_40	property_suksan	นาย	เอกชัย	สุขเกษม	MALE	\N	\N
-tenant_41	property_suksan	น.ส.	ลลิตา	ศรีเมือง	MALE	\N	\N
-tenant_42	property_suksan	นาย	จักรพงษ์	แก้วดี	MALE	\N	\N
+tenant_01	property_suksan	น.ส.	ผู้เช่าสมมุติ	01	FEMALE	\N	\N
+tenant_02	property_suksan	นาย	ผู้เช่าสมมุติ	02	MALE	\N	\N
+tenant_03	property_suksan	น.ส.	ผู้เช่าสมมุติ	03	FEMALE	\N	\N
+tenant_04	property_suksan	นาย	ผู้เช่าสมมุติ	04	MALE	\N	\N
+tenant_05	property_suksan	น.ส.	ผู้เช่าสมมุติ	05	FEMALE	\N	\N
+tenant_06	property_suksan	น.ส.	ผู้เช่าสมมุติ	06	FEMALE	\N	\N
+tenant_07	property_suksan	นาย	ผู้เช่าสมมุติ	07	MALE	\N	\N
+tenant_08	property_suksan	น.ส.	ผู้เช่าสมมุติ	08	FEMALE	\N	\N
+tenant_09	property_suksan	น.ส.	ผู้เช่าสมมุติ	09	FEMALE	\N	\N
+tenant_10	property_suksan	น.ส.	ผู้เช่าสมมุติ	10	FEMALE	\N	\N
+tenant_11	property_suksan	น.ส.	ผู้เช่าสมมุติ	11	FEMALE	\N	\N
+tenant_12	property_suksan	น.ส.	ผู้เช่าสมมุติ	12	FEMALE	\N	\N
+tenant_13	property_suksan	น.ส.	ผู้เช่าสมมุติ	13	FEMALE	\N	\N
+tenant_14	property_suksan	น.ส.	ผู้เช่าสมมุติ	14	FEMALE	\N	\N
+tenant_15	property_suksan	น.ส.	ผู้เช่าสมมุติ	15	FEMALE	\N	\N
+tenant_16	property_suksan	น.ส.	ผู้เช่าสมมุติ	16	FEMALE	\N	\N
+tenant_17	property_suksan	น.ส.	ผู้เช่าสมมุติ	17	FEMALE	\N	\N
+tenant_18	property_suksan	น.ส.	ผู้เช่าสมมุติ	18	FEMALE	\N	\N
+tenant_19	property_suksan	น.ส.	ผู้เช่าสมมุติ	19	FEMALE	\N	\N
+tenant_20	property_suksan	น.ส.	ผู้เช่าสมมุติ	20	FEMALE	\N	\N
+tenant_21	property_suksan	น.ส.	ผู้เช่าสมมุติ	21	FEMALE	\N	\N
+tenant_22	property_suksan	น.ส.	ผู้เช่าสมมุติ	22	FEMALE	\N	\N
+tenant_23	property_suksan	น.ส.	ผู้เช่าสมมุติ	23	FEMALE	\N	\N
+tenant_24	property_suksan	น.ส.	ผู้เช่าสมมุติ	24	FEMALE	\N	\N
+tenant_25	property_suksan	น.ส.	ผู้เช่าสมมุติ	25	FEMALE	\N	\N
+tenant_26	property_suksan	น.ส.	ผู้เช่าสมมุติ	26	FEMALE	\N	\N
+tenant_27	property_suksan	น.ส.	ผู้เช่าสมมุติ	27	FEMALE	\N	\N
+tenant_28	property_suksan	นาย	ผู้เช่าสมมุติ	28	MALE	\N	\N
+tenant_29	property_suksan	นาย	ผู้เช่าสมมุติ	29	MALE	\N	\N
+tenant_30	property_suksan	นาย	ผู้เช่าสมมุติ	30	MALE	\N	\N
+tenant_31	property_suksan	นาย	ผู้เช่าสมมุติ	31	MALE	\N	\N
+tenant_32	property_suksan	นาย	ผู้เช่าสมมุติ	32	MALE	\N	\N
+tenant_33	property_suksan	นาย	ผู้เช่าสมมุติ	33	MALE	\N	\N
+tenant_34	property_suksan	นาย	ผู้เช่าสมมุติ	34	MALE	\N	\N
+tenant_35	property_suksan	นาย	ผู้เช่าสมมุติ	35	MALE	\N	\N
+tenant_36	property_suksan	นาย	ผู้เช่าสมมุติ	36	MALE	\N	\N
+tenant_37	property_suksan	นาย	ผู้เช่าสมมุติ	37	MALE	\N	\N
+tenant_38	property_suksan	นาย	ผู้เช่าสมมุติ	38	MALE	\N	\N
+tenant_39	property_suksan	นาย	ผู้เช่าสมมุติ	39	MALE	\N	\N
+tenant_40	property_suksan	นาย	ผู้เช่าสมมุติ	40	MALE	\N	\N
+tenant_41	property_suksan	นาย	ผู้เช่าสมมุติ	41	MALE	\N	\N
+tenant_42	property_suksan	นาย	ผู้เช่าสมมุติ	42	MALE	\N	\N
 \.
 
 

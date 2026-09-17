@@ -14,19 +14,13 @@ function bangkokDate(period: string, day: number, hour: number, minute = 0): Dat
   return new Date(Date.UTC(year!, month! - 1, day, hour, minute) - 7 * 60 * 60 * 1000);
 }
 
-const tenantNames = [
-  ['น.ส.', 'วราภรณ์', 'ใจดี'], ['นาย', 'ศักดิ์ชัย', 'แสนสุข'], ['น.ส.', 'ธนพร', 'พรมมา'], ['นาย', 'กิตติพงษ์', 'รัตนวงศ์'],
-  ['น.ส.', 'พิมพ์ชนก', 'บุญมี'], ['น.ส.', 'ชนากานต์', 'สุขใจ'], ['นาย', 'สุรเชษฐ์', 'จันทร์ดี'], ['นาย', 'ธนกฤต', 'วงศ์ดี'],
-  ['น.ส.', 'ณัฐชา', 'มีสุข'], ['น.ส.', 'ปวีณา', 'แก้วใส'], ['นาย', 'พงศกร', 'ทองดี'], ['น.ส.', 'ศิริพร', 'คำแสน'],
-  ['น.ส.', 'กัญญารัตน์', 'บุญช่วย'], ['นาย', 'ณัฐวุฒิ', 'เมืองงาม'], ['น.ส.', 'ภัทรวดี', 'ใจงาม'], ['นาย', 'อาทิตย์', 'ศรีสุข'],
-  ['น.ส.', 'สุพัตรา', 'แสงทอง'], ['น.ส.', 'จิราภา', 'พูลผล'], ['นาย', 'ธีรภัทร', 'บุญส่ง'], ['น.ส.', 'ชลธิชา', 'สวัสดี'],
-  ['นาย', 'ภูริณัฐ', 'ใจมั่น'], ['น.ส.', 'ณิชาภัทร', 'วัฒนา'], ['น.ส.', 'รัตนา', 'สงวนดี'], ['นาย', 'วรพล', 'มั่นคง'],
-  ['น.ส.', 'อรทัย', 'พรหมดี'], ['นาย', 'ชัยวัฒน์', 'ศรีงาม'], ['น.ส.', 'นันทิชา', 'สุขสันต์'], ['น.ส.', 'เบญจพร', 'แก้วงาม'],
-  ['นาย', 'ภาคภูมิ', 'ทรัพย์ดี'], ['น.ส.', 'สุชาดา', 'มีผล'], ['นาย', 'ธนพล', 'ศรีทอง'], ['น.ส.', 'อัญชลี', 'ใจบุญ'],
-  ['น.ส.', 'กมลชนก', 'พูนสุข'], ['นาย', 'ปกรณ์', 'วงศ์ไทย'], ['น.ส.', 'มณีรัตน์', 'แสนดี'], ['นาย', 'เจษฎา', 'คงมั่น'],
-  ['น.ส.', 'พรนภา', 'ชื่นใจ'], ['นาย', 'นราวิชญ์', 'วัฒนา'], ['น.ส.', 'พิชชาภา', 'บุญเรือง'], ['นาย', 'เอกชัย', 'สุขเกษม'],
-  ['น.ส.', 'ลลิตา', 'ศรีเมือง'], ['นาย', 'จักรพงษ์', 'แก้วดี'],
-] as const;
+const tenantNames = Array.from({ length: 42 }, (_, index) => {
+  const isFemale = (index < 24 && index !== 1 && index !== 3 && index !== 6) || (index >= 24 && index <= 26);
+  const title = isFemale ? 'น.ส.' : 'นาย';
+  const num = String(index + 1).padStart(2, '0');
+  return [title, 'ผู้เช่าสมมุติ', num] as const;
+});
+
 
 function roomNumbers(): string[] {
   return Array.from({ length: 4 }, (_, floor) => Array.from({ length: 12 }, (_, room) => `${floor + 1}${String(room + 1).padStart(2, '0')}`)).flat();
@@ -58,11 +52,12 @@ async function main(): Promise<void> {
   await prisma.user.deleteMany();
 
   await prisma.user.create({
-    data: { id: USER_ID, email: 'owner@teehidz.local', displayName: 'คุณนท ถาวร ศรีเสนพิลา', role: 'OWNER' },
+    data: { id: USER_ID, email: 'owner@teehidz.local', displayName: 'คุณตี๋หิด', role: 'OWNER' },
   });
   await prisma.property.create({
-    data: { id: PROPERTY_ID, name: 'สุขสันต์ คอนโด', type: 'CONDO', typeLabel: 'คอนโด', plan: 'PREMIUM' },
+    data: { id: PROPERTY_ID, name: 'ตี๋หิด คอนโด', type: 'CONDO', typeLabel: 'คอนโด', plan: 'PREMIUM' },
   });
+
   await prisma.propertyMember.create({ data: { userId: USER_ID, propertyId: PROPERTY_ID, role: 'OWNER' } });
 
   const vacant = new Set(['103', '112', '207', '309', '405', '412']);
