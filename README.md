@@ -16,9 +16,32 @@
 
 ---
 
+## 📸 ภาพตัวอย่างหน้าจอระบบ (System Screenshots)
+
+### 📊 หน้าหลักแดชบอร์ดบริหาร (Executive Dashboard)
+> หน้าจอภาพรวมสำหรับเจ้าของโครงการ แสดงสรุป KPIs, อัตราการเข้าพัก, กราฟรายรับ-รายจ่ายย้อนหลัง และเมนูด่วน SweetAlert2
+![แดชบอร์ดบริหาร](screenshots/dashboard.png)
+
+### 🛏️ ระบบผังห้องพักและสถานะ (Room Management)
+> แสดงสถานะห้องว่าง/มีผู้เช่า ข้อมูลค่าเช่า ชั้น และวันหมดสัญญา พร้อมฟังก์ชันค้นหาและกรองสถานะ
+![ผังห้องพักและสถานะ](screenshots/rooms.png)
+
+### 📑 สัญญาเช่า & ทะเบียนผู้เช่า (Leases & Tenants)
+| สัญญาเช่า (Lease Management) | ทะเบียนประวัติผู้เช่า (Tenant Directory) |
+| :---: | :---: |
+| ![สัญญาเช่า](screenshots/leases.png) | ![ทะเบียนผู้เช่า](screenshots/tenants.png) |
+
+### 💰 การเงินและค่าเช่า & แจ้งซ่อมบำรุง (Finance & Maintenance)
+| บันทึกรายรับ-รายจ่าย & ค่าเช่า | รายการแจ้งซ่อมบำรุงและสถานะช่าง |
+| :---: | :---: |
+| ![การเงินและค่าเช่า](screenshots/finance.png) | ![แจ้งซ่อมบำรุง](screenshots/maintenance.png) |
+
+---
+
 ## 📁 โครงสร้างโปรเจกต์ (Project Structure)
 
 ```text
+├── screenshots/                  # 📸 ภาพพรีวิวหน้าจอการทำงานจริงของระบบ (Dashboard, Rooms, Leases ฯลฯ)
 ├── frontend/                     # ซอร์สโค้ดฝั่งหน้าบ้าน (Vite + React 19 + Tailwind CSS)
 │   ├── public/                   # Static assets & ภาพ 3D อาคารคอนโด (/condo_hero.jpg)
 │   ├── src/
@@ -56,8 +79,8 @@
 
 ### 1. โคลนโปรเจกต์ (Clone Repository)
 ```bash
-git clone https://github.com/YOUR_USERNAME/teehidz.git
-cd teehidz
+git clone https://github.com/namtee/Rentroom.git
+cd Rentroom
 ```
 
 ---
